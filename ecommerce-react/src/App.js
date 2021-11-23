@@ -5,9 +5,7 @@ import NavBar from './components/NavBar/NavBar';
 function App() {
   return (
     <div className="App">     
-      <p>
-        Mario Alvarado - Desafio 2 
-      </p>
+      
       <nav>
         <NavBar/>
       </nav>
