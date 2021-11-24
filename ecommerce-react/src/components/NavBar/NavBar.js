@@ -1,31 +1,37 @@
 import React from 'react';
-import Navbar from 'react-bootstrap/Navbar'
-import Container from 'react-bootstrap/Container'
-import Nav from 'react-bootstrap/Nav'
-import 'bootstrap/dist/css/bootstrap.min.css';
-import './NavBar.css'
+import AppBar from '@mui/material/AppBar'
+import Button from '@mui/material/Button'
+import CartWidget from '../CartWidget/CartWidget'
 import logo from '../../logo.png'
+import './NavBar.css'
 export default () => {
     return (
         <div>
-            <Navbar bg="dark" variant="dark">
-                <Navbar.Brand href="#home">
+            <AppBar
+                color='inherit'
+            >
+                <nav>
                     <div className="logo">
-                        <img
-                            src={logo} alt="logo"                            
-                        />
+                        <a href="#"> <img src={logo}></img> </a>
                     </div>
+                    <ul>
+                        <li>
+                            <Button href="#">Indumentaria</Button>
+                        </li>
+                        <li>
+                            <Button href="#">Equipamiento</Button>
+                        </li>
+                        <li>
+                            <Button href="#">Accesorios</Button>
+                        </li>
+                    </ul>
+                    <a href="#"><CartWidget/></a>
+                    
+                </nav>
+                
+            </AppBar>
 
 
-                </Navbar.Brand>
-                <Container>
-                    <Nav className="me-auto">
-                        <Nav.Link href="#">Indumentaria</Nav.Link>
-                        <Nav.Link href="#">Equipamiento</Nav.Link>
-                        <Nav.Link href="#">Accesorios</Nav.Link>
-                    </Nav>
-                </Container>
-            </Navbar>
         </div>
 
     )
