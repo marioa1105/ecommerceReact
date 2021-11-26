@@ -1,0 +1,5 @@
+.container-control{
+    display: flex;
+    align-items: center;
+    border: 10;
+}
