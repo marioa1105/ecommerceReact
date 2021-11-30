@@ -1,5 +1,11 @@
+div
+{
+    justify-content: space-between;
+}
 .container-control{
+    
     display: flex;
-    align-items: center;
-    border: 10;
+}
+.count-control{
+    width: 5px;
 }

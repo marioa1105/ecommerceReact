@@ -1,37 +1,52 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import IconButton from '@mui/material/IconButton'
 import AddOutlinedIcon from '@mui/icons-material/AddOutlined';
 import RemoveOutlinedIcon from '@mui/icons-material/RemoveOutlined';
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 import Button from '@mui/material/Button'
-import { Typography } from '@mui/material';
+import { ButtonGroup, Typography } from '@mui/material';
 import './ItemCount.css'
+import Grid from '@mui/material/Grid'
+import Box from '@mui/material/Box'
 
-const ItemCount = ({stock}) => {
+const ItemCount = ({ stock }) => {
     const [count, setCount] = useState(0);
 
-    const onAdd = () =>{
+    const onAdd = () => {
         count < stock && setCount(count + 1)
     }
-    const onRemove = () =>{
+    const onRemove = () => {
         count > 0 && setCount(count - 1)
     }
-    return(
-        <div>
+    return (
+        <Box
+            sx={{
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                '& > *': {
+                    m: 1,
+                },
+            }}
+        >
             <p>Producto ItemCount </p>
-            <IconButton color="primary" onClick={onRemove}> 
-                <RemoveOutlinedIcon/>
-            </IconButton>   
-            <Typography> {count} </Typography>           
-            <IconButton color="primary" onClick={onAdd}>                 
-                <AddOutlinedIcon/>
-            </IconButton>            
+            <ButtonGroup variant="outlined" aria-label="outlined button group">
+                <IconButton color="primary" onClick={onRemove}>
+                    <RemoveOutlinedIcon />
+                </IconButton>
+
+                <Typography className="count-control" > {count} </Typography>
+
+                <IconButton color="primary" onClick={onAdd}>
+                    <AddOutlinedIcon />
+                </IconButton>
+            </ButtonGroup>
             <Button variant="outlined" startIcon={<AddShoppingCartIcon />}>
                 Agregar
-            </Button>
-        </div>
-        
+            </Button>   
+        </Box>
+
     );
-} 
+}
 
 export default ItemCount;
