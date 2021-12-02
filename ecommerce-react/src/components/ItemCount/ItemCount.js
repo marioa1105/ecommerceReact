@@ -19,17 +19,8 @@ const ItemCount = ({ stock }) => {
         count > 0 && setCount(count - 1)
     }
     return (
-        <Box
-            sx={{
-                display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'center',
-                '& > *': {
-                    m: 1,
-                },
-            }}
-        >
-            <p>Producto ItemCount </p>
+        <Box  sx={{display:'flex', alignItems: 'center'}}        
+        >            
             <ButtonGroup variant="outlined" aria-label="outlined button group">
                 <IconButton color="primary" onClick={onRemove}>
                     <RemoveOutlinedIcon />
