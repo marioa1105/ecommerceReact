@@ -1,22 +1,24 @@
 import React, {useState, useEffect} from "react";
 import ItemDetail from '../ItemDetail/ItemDetail'
-const data = {
-    id:1,
-    title: "Kit mancuernas",
-    price:9200,
-    stock:10,
-    pictureUrl:'kitmancuernas.jpg'
+import {useParams} from 'react-router-dom'
+import dataItems from '../../API/DataItems.json'
+import CircularProgress from '@mui/material/CircularProgress';
+
+const getDataProduct = (id) => 
+{
+    return new Promise((resolve, reject) => {
+            setTimeout(() => {
+                let data = dataItems.find(item => item.id == id);
+                console.log(data);
+                resolve(data)
+                },2000)
+    })
 }
 
-const getDataProduct = new Promise((resolve, reject) => {
-    setTimeout(() => {
-        resolve(data)
-    },2000)
-})
-
 const ItemDetailContainer = () => {
+    const {id} = useParams();
     useEffect(()=>{
-      getDataProduct.then(response => {
+      getDataProduct(id).then(response => {
           setProduct(response)
       })  
     },[]);
@@ -24,7 +26,11 @@ const ItemDetailContainer = () => {
     const [product, setProduct] = useState({})
     return (
     <div>  
-        <ItemDetail item={product}/>
+        {console.log(product)}
+        {            
+            Object.keys(product).length > 0 ? <ItemDetail item={product}/>: <CircularProgress/>
+        }
+        
     </div>)
 }
 

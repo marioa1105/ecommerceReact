@@ -1,0 +1,9 @@
+.detail{
+    display: flex;
+    justify-content:space-around
+}
+.detail-img{
+    border-style: solid;
+    height: fit-content;
+    width: fit-content;
+}

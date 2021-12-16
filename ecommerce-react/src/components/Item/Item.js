@@ -5,6 +5,8 @@ import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
+import Button from '@mui/material/Button'
+import {Link} from 'react-router-dom'
 import './Item.css'
 const Item = ({item}) => {
     return (
@@ -27,6 +29,9 @@ const Item = ({item}) => {
                 </Typography>
             </CardContent>
             <CardActions>
+                <Link to={`/item/${item.id}`}>
+                    <Button>Ver</Button> 
+                </Link>                
                 <ItemCount stock = {item.stock}/>
             </CardActions>                        
         </Card>
