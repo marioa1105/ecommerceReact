@@ -11,6 +11,7 @@ export default function AppRouter() {
         <Routes>
             <Route path ='/' element = {<HomePage/>}/>
             <Route path ='/item/:id' element = {<DetailPage/>}/>            
+            <Route path ='/category/:id' element = {<HomePage/>}/>            
         </Routes>           
        
     </BrowserRouter>   )

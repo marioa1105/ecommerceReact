@@ -6,7 +6,7 @@
         "stock":10,
         "pictureUrl":"kitmancuernas.jpg",
         "category":{
-            "id":1,
+            "id":2,
             "description":"Equipamiento"
         }
 
@@ -18,8 +18,8 @@
         "stock":20,
         "pictureUrl":"tobilleras.jpg",
         "category":{
-            "id":1,
-            "description":"Equipamiento"
+            "id":3,
+            "description":"Accesorios"
         }
     },
     {
@@ -29,7 +29,7 @@
         "stock":15,
         "pictureUrl":"colchoneta.jpg",
         "category":{
-            "id":1,
-            "description":"Equipamiento"
+            "id":3,
+            "description":"Accesorios"
         }
     }]

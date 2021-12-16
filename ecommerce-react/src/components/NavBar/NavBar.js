@@ -19,17 +19,17 @@ export default () => {
                     </div>
                     <ul>
                         <li>
-                            <Link to='/'>
+                            <Link to='/category/1'>
                                 <Button href="#">Indumentaria</Button>
                             </Link>
                         </li>
                         <li>
-                            <Link to="/">
+                            <Link to="/category/2">
                                 <Button href="#">Equipamiento</Button>
                             </Link>
                         </li>
                         <li>
-                            <Link to='/'>
+                            <Link to='/category/3'>
                                 <Button href="#">Accesorios</Button>
                             </Link>
                         </li>
