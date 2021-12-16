@@ -4,6 +4,7 @@ import Button from '@mui/material/Button'
 import CartWidget from '../CartWidget/CartWidget'
 import logo from '../../logo.png'
 import './NavBar.css'
+import {Link} from 'react-router-dom'
 export default () => {
     return (
         <div>
@@ -12,17 +13,25 @@ export default () => {
             >
                 <nav>
                     <div className="logo">
-                        <a href="#"> <img src={logo}></img> </a>
+                        <Link to='/'>
+                            <a href="#"> <img src={logo}></img> </a>
+                        </Link>
                     </div>
                     <ul>
                         <li>
-                            <Button href="#">Indumentaria</Button>
+                            <Link to='/'>
+                                <Button href="#">Indumentaria</Button>
+                            </Link>
                         </li>
                         <li>
-                            <Button href="#">Equipamiento</Button>
+                            <Link to="/">
+                                <Button href="#">Equipamiento</Button>
+                            </Link>
                         </li>
                         <li>
-                            <Button href="#">Accesorios</Button>
+                            <Link to='/'>
+                                <Button href="#">Accesorios</Button>
+                            </Link>
                         </li>
                     </ul>
                     <a href="#"><CartWidget/></a>

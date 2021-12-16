@@ -1,21 +1,11 @@
 
 import './App.css';
-import NavBar from './components/NavBar/NavBar';
-import ItemListContainer from './components/ItemListContainer/ItemListContainer';
-import { Container } from '@mui/material';
-import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
+import AppRouter from './components/AppRouter/AppRouter';
 function App() {
   return (
-    <div>           
-      <nav>
-        <NavBar/>
-      </nav> 
+    <div>     
+      <AppRouter/>    
       
-      <Container>
-        <ItemListContainer/>
-
-        <ItemDetailContainer/>
-      </Container>
             
     </div>
   );
