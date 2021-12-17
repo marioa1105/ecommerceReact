@@ -9,11 +9,15 @@ import './ItemCount.css'
 import Grid from '@mui/material/Grid'
 import Box from '@mui/material/Box'
 
-const ItemCount = ({ stock }) => {
+const ItemCount = ({ stock , addCountCart}) => {
     const [count, setCount] = useState(0);
 
     const onAdd = () => {
-        count < stock && setCount(count + 1)
+        
+        if(count < stock) {
+            setCount(count + 1)
+            addCountCart(count + 1)
+        }
     }
     const onRemove = () => {
         count > 0 && setCount(count - 1)

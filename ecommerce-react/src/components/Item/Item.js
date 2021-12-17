@@ -9,6 +9,7 @@ import Button from '@mui/material/Button'
 import {Link} from 'react-router-dom'
 import './Item.css'
 const Item = ({item}) => {
+    const addCount = () => {};
     return (
         <Card key = {item.id}>
             <CardContent>
@@ -32,7 +33,7 @@ const Item = ({item}) => {
                 <Link to={`/item/${item.id}`}>
                     <Button>Ver</Button> 
                 </Link>                
-                <ItemCount stock = {item.stock}/>
+                <ItemCount stock = {item.stock} addCountCart={addCount}/>
             </CardActions>                        
         </Card>
     )
