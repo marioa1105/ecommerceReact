@@ -17,15 +17,26 @@ export default () => {
                         </Navbar.Brand>
                     </Link>
                     <Nav className="justify-content-end">
-                        <Link to='/category/1'>
-                            <Nav.Link>Indumentaria</Nav.Link>
-                        </Link>
-                        <Link to="/category/2">
-                            <Nav.Link>Equipamiento</Nav.Link>
-                        </Link>
-                        <Link to='/category/3'>
-                            <Nav.Link>Accesorios</Nav.Link>
-                        </Link>
+                        
+                        <Nav.Link>
+                            <Link to='/category/1'>Indumentaria</Link>
+                        </Nav.Link>
+                                                
+                        <Nav.Link>
+                            <Link to="/category/2">Equipamiento</Link>
+                        </Nav.Link>
+
+                        <Nav.Link>
+                            <Link to='/category/3'>Accesorios</Link>
+
+                        </Nav.Link>
+                                                
+                        <Nav.Link>
+                            <Link to='/category/3'>
+                                <CartWidget/>
+                            </Link>
+                        </Nav.Link>
+                        
                     </Nav>
                 </Container>
             </Navbar>                        

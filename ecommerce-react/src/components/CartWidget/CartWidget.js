@@ -1,9 +1,10 @@
 import React from 'react'
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
+import {BsCart4} from 'react-icons/bs'
 const CartWidget = () => {
     return (
         <div>
-            <ShoppingCartOutlinedIcon color="primary" />
+            <BsCart4 size={30} color="lightblue"/>
         </div>
     );
 }
