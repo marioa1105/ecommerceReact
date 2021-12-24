@@ -1,14 +1,10 @@
 import React, { useState } from 'react'
-import IconButton from '@mui/material/IconButton'
-import AddOutlinedIcon from '@mui/icons-material/AddOutlined';
-import RemoveOutlinedIcon from '@mui/icons-material/RemoveOutlined';
-import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
-import Button from '@mui/material/Button'
-import { ButtonGroup, Typography } from '@mui/material';
-import './ItemCount.css'
-import Grid from '@mui/material/Grid'
-import Box from '@mui/material/Box'
-
+import InputGroup from 'react-bootstrap/InputGroup'
+import FormControl from 'react-bootstrap/FormControl'
+import Button from 'react-bootstrap/Button'
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
+import {BsCart4} from 'react-icons/bs'
 const ItemCount = ({ stock , addCountCart}) => {
     const [count, setCount] = useState(0);
 
@@ -23,23 +19,36 @@ const ItemCount = ({ stock , addCountCart}) => {
         count > 0 && setCount(count - 1)
     }
     return (
-        <Box  sx={{display:'flex', alignItems: 'center'}}        
-        >            
-            <ButtonGroup variant="outlined" aria-label="outlined button group">
-                <IconButton color="primary" onClick={onRemove}>
-                    <RemoveOutlinedIcon />
-                </IconButton>
-
-                <Typography className="count-control" > {count} </Typography>
-
-                <IconButton color="primary" onClick={onAdd}>
-                    <AddOutlinedIcon />
-                </IconButton>
-            </ButtonGroup>
-            <Button variant="outlined" startIcon={<AddShoppingCartIcon />}>
-                Agregar
-            </Button>   
-        </Box>
+        <>        
+            <Row>
+                <Col>
+                    <InputGroup>     
+                        <InputGroup.Text id="btnGroupRemoveon" onClick={onRemove}>-</InputGroup.Text> 
+                        <FormControl
+                            className='text-center'
+                            type="label"                    
+                            aria-label="Input group example"
+                            aria-describedby="btnGroupAddon"
+                            value={count}
+                            readOnly
+                        />
+                        <InputGroup.Text id="btnGroupAddon" onClick={onAdd}>+</InputGroup.Text>                                                 
+                    </InputGroup>
+                </Col>
+            </Row>
+            <Row>
+                <Col></Col>
+            </Row>
+            <Row className="justify-content-md-center">
+                <Col md="auto">
+                    <Button variant="outline-primary">
+                        <BsCart4 size={25}/>
+                        Agregar al Carrito
+                    </Button> 
+                </Col>
+                
+            </Row>
+        </>
 
     );
 }

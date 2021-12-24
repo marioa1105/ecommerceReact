@@ -1,31 +1,30 @@
 import React from 'react'
 import Item from '../Item/Item'
-import Grid from '@mui/material/Grid'
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
 
 const ItemList = ({ items }) => {
     {
         if (items.length == 0){
-            return (
-                <Grid container spacing={2}>
-                    <Grid item xs={4} >
+            return (                
+                <Row>
+                    <Col/>
+                    <Col>
                         <h1>No existen productos.</h1>
-                    </Grid>                    
-                </Grid>                
+                    </Col>
+                    <Col/>                    
+                </Row>                
             )
         }
         else{
             return (
             
-                <Grid container spacing={2}>
-                    {console.log("items", items)}
+                <Row className="justify-content-md-center">                    
                     {items.map(item => {
-                        return  <Grid item xs={4} key={item.id}> <Item item={item} key= {item.id}/> </Grid>
-                                
-                                                
-                            
+                        return  <Col md="auto" key={item.id}> <Item item={item} key= {item.id}/> </Col>                                                                                                            
                     })}
                                    
-                </Grid>
+                </Row>
             )
         }
         

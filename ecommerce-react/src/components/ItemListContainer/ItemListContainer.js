@@ -3,6 +3,8 @@ import react, {useState, useEffect} from 'react'
 import ItemList from '../ItemList/ItemList';
 import CircularProgress from '@mui/material/CircularProgress';
 import dataItems from '../../API/DataItems.json'
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
 import { useParams } from 'react-router-dom';
 const getDataProduct = (id) => {
     return new Promise((resolve, reject) => {            
@@ -36,14 +38,21 @@ const ItemListContainer = ()=>{
     },[id]);
 
 
-    return(        
-        <div>
-            
-            {                               
-                progressVisible?<CircularProgress /> :<ItemList items={items}/>                
-            }
-            
-        </div>
+    return(     
+           
+         <>
+            {progressVisible?
+                (
+                    <Row className="justify-content-md-center">
+                        <Col md="auto">
+                            <CircularProgress /> 
+                        </Col> 
+                    </Row>
+                 ) 
+                :
+                <ItemList items={items}/>}
+        </>                                     
+        
     )
 }
 

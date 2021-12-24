@@ -1,5 +1,5 @@
 import React from 'react'
-import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
+
 import {BsCart4} from 'react-icons/bs'
 const CartWidget = () => {
     return (
