@@ -21,12 +21,12 @@ const ItemDetailContainer = () => {
       getDataProduct(id).then(response => {
           setProduct(response)
       })  
-    },[]);
+    },[id]);
 
     const [product, setProduct] = useState({})
     return (
     <div>  
-        {console.log(product)}
+        
         {            
             Object.keys(product).length > 0 ? <ItemDetail item={product}/>: <CircularProgress/>
         }

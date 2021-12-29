@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import ItemCount from "../ItemCount/ItemCount"
 import {Link} from 'react-router-dom'
 import './Item.css'
@@ -8,9 +8,13 @@ import ListGroup from 'react-bootstrap/ListGroup'
 import ListGroupItem from 'react-bootstrap/ListGroupItem'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
+import CartContext from '../../context/CartContext'
 const Item = ({item}) => {
+    const {products, addProducts} = useContext(CartContext);
     const addCount = () => {};
+    console.log("producto items",products);
     return (
+        
         <Card style={{ width: '25rem' }}>
             <Card.Img variant="top" src={`../../assets/${item.pictureUrl}`} style={{height:180}} />
             <Card.Body>
@@ -23,13 +27,16 @@ const Item = ({item}) => {
                     <ItemCount stock = {item.stock} addCountCart={addCount}/>
                 </ListGroupItem>
                 <ListGroupItem>
-                    <Link to={`/item/${item.id}`}>
-                        <Row className="justify-content-md-center">
-                            <Col md="auto">
-                                <Button variant="link" >Ver detalle</Button> 
-                            </Col>                            
-                        </Row>
-                    </Link> 
+                    
+                    <Row className="justify-content-md-center">
+                        <Col md="auto">
+                            <Link to={`/item/${item.id}`}>
+                                Ver detalle
+                            </Link>
+                            
+                        </Col>                            
+                    </Row>
+                     
                 </ListGroupItem>                    
             </ListGroup>
                                

@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
 import InputGroup from 'react-bootstrap/InputGroup'
 import FormControl from 'react-bootstrap/FormControl'
-import Button from 'react-bootstrap/Button'
+
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
-import {BsCart4} from 'react-icons/bs'
+
 const ItemCount = ({ stock , addCountCart}) => {
     const [count, setCount] = useState(0);
 
@@ -18,6 +18,7 @@ const ItemCount = ({ stock , addCountCart}) => {
     const onRemove = () => {
         count > 0 && setCount(count - 1)
     }
+    
     return (
         <>        
             <Row>
@@ -41,10 +42,7 @@ const ItemCount = ({ stock , addCountCart}) => {
             </Row>
             <Row className="justify-content-md-center">
                 <Col md="auto">
-                    <Button variant="outline-primary">
-                        <BsCart4 size={25}/>
-                        Agregar al Carrito
-                    </Button> 
+                    
                 </Col>
                 
             </Row>
