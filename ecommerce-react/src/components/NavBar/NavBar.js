@@ -31,10 +31,8 @@ export default () => {
 
                         </Nav.Link>
                                                 
-                        <Nav.Link>
-                            <Link to='/category/3'>
-                                <CartWidget/>
-                            </Link>
+                        <Nav.Link>                            
+                            <CartWidget/>                            
                         </Nav.Link>
                         
                     </Nav>
