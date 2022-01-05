@@ -19,15 +19,15 @@ export default () => {
                     <Nav className="justify-content-end">
                         
                         <Nav.Link>
-                            <Link to='/category/1'>Indumentaria</Link>
+                            <Link to='/category/indumentaria'>Indumentaria</Link>
                         </Nav.Link>
                                                 
                         <Nav.Link>
-                            <Link to="/category/2">Equipamiento</Link>
+                            <Link to="/category/equipamiento">Equipamiento</Link>
                         </Nav.Link>
 
                         <Nav.Link>
-                            <Link to='/category/3'>Accesorios</Link>
+                            <Link to='/category/accesorios'>Accesorios</Link>
 
                         </Nav.Link>
                                                 
