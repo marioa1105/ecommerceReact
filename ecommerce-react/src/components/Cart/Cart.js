@@ -1,28 +1,49 @@
-import { useState, useContext } from 'react'
-import Offcanvas from 'react-bootstrap/Offcanvas'
+import { useContext, useState } from 'react'
+import { Col, Row, Table, Button } from 'react-bootstrap'
 import CartContext from '../../context/CartContext'
-import CartItems from '../CartItems/CartItems'
-const Cart = ({handleShowCart, showCart}) => {
-    const {products, totalPrice,deleteProduct} = useContext(CartContext);
+import ContactModal from '../ContactModal/ContactModal'
+const Cart = () => {
+    const {products, totalPrice} = useContext(CartContext);
+    const [show, setShow] = useState(false);
     const handleShow = () => {
-        handleShowCart();
+        setShow(!show)
     }
     return (
         <>
-            <Offcanvas show={showCart}  placement='end' onHide={handleShow}>
-                <Offcanvas.Header closeButton>
-                    <Offcanvas.Title></Offcanvas.Title>
-                </Offcanvas.Header>
-                <Offcanvas.Body>
-                    {
-                        products.length == 0
-                        ?<h1>El carrito esta vacio</h1>
-                        :<CartItems products = {products} totalPrice={totalPrice} deleteProduct ={deleteProduct}/>
-                    }
-                    
-                </Offcanvas.Body>
-            </Offcanvas>
-        </>
-    )
+            <Row>
+                <Col>
+                    <Table striped bordered hover>
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>Articulo</th>
+                                <th>Cantidad</th>
+                                <th>Precio</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {products.map(product => {
+                                return (
+                                    <tr>
+                                        <td>1</td>
+                                        <td>{product.title}</td>
+                                        <td>{product.quantity}</td>
+                                        <td>{product.price}</td>
+                                    </tr>
+                                );
+                            })}
+                            
+                        </tbody>
+                    </Table>
+                </Col>
+                <Col>
+                    <Button onClick = {handleShow}>
+                        Confirmar Compra
+                    </Button>
+                    <ContactModal products = {products} show = {show} handleShow = {handleShow} total={totalPrice} />
+                </Col>
+            </Row>
+        </>)
 }
+
 export default Cart

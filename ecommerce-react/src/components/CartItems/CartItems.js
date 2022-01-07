@@ -5,6 +5,7 @@ import Button from 'react-bootstrap/Button'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import {BsFillTrashFill} from 'react-icons/bs'
+import {Link} from 'react-router-dom'
 
 
 const CartItems = ({ products, totalPrice, deleteProduct }) => {
@@ -43,10 +44,12 @@ const CartItems = ({ products, totalPrice, deleteProduct }) => {
                         Total: $ {totalPrice}
                     </ListGroupItem>
                 </ListGroup>
+                <Link to='/Cart'>
+                    <Button variant="dark" size="lg">
+                        FINALIZAR COMPRA
+                    </Button>
+                </Link>
                 
-                <Button variant="dark" size="lg">
-                    FINALIZAR COMPRA
-                </Button>
                 
             
             

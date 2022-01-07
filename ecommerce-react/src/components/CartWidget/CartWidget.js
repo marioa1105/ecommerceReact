@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 
 import {BsCart4} from 'react-icons/bs'
-import Cart from '../Cart/Cart.js'
+import Cart from '../CartModal/CartModal.js'
 
 const CartWidget = () => {
     const[showCart,setShowCart] = useState(false);
