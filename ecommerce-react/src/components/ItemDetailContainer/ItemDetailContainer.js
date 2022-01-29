@@ -4,7 +4,7 @@ import {useParams} from 'react-router-dom'
 import ProductosDAO from '../../API/ProductosDAO'
 import CircularProgress from '@mui/material/CircularProgress';
 
-
+import './ItemDetailContainer.css'
 
 const ItemDetailContainer = () => {
     const {id} = useParams();
@@ -16,7 +16,7 @@ const ItemDetailContainer = () => {
 
     const [product, setProduct] = useState({})
     return (
-    <div>  
+    <div className="cardDetailHeader">  
         
         {            
             Object.keys(product).length > 0 ? <ItemDetail item={product}/>: <CircularProgress/>

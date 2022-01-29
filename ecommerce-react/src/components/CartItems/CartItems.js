@@ -43,16 +43,20 @@ const CartItems = ({ products, totalPrice, deleteProduct }) => {
                     <ListGroupItem active>
                         Total: $ {totalPrice}
                     </ListGroupItem>
-                </ListGroup>
-                <Link to='/Cart'>
-                    <Button variant="dark" size="lg">
-                        FINALIZAR COMPRA
-                    </Button>
-                </Link>
-                
-                
-            
-            
+                    <ListGroupItem >
+                        <Row>
+                            <Col/>
+                            <Col>
+                                <Link to='/Cart'>
+                                    <Button variant="dark" >
+                                        FINALIZAR
+                                    </Button>
+                                </Link>
+                            </Col>
+                            <Col/>
+                        </Row>                        
+                    </ListGroupItem>
+                </ListGroup>            
         </>
     )
 }

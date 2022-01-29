@@ -7,14 +7,15 @@ import React, {useContext} from 'react';
 import {CartProvider} from '../../context/CartContext'
 
 import Container from 'react-bootstrap/esm/Container';
+import './AppRouter.css'
 export default function AppRouter() {
     return (
     <BrowserRouter>
         <CartProvider>           
             <nav>
-            <NavBar/>
+                <NavBar/>
             </nav> 
-            <Container>
+            <Container className='body-page'>
                 <Routes>
                     <Route path ='/' element = {<HomePage/>}/>
                     <Route path ='/item/:id' element = {<DetailPage/>}/>            
