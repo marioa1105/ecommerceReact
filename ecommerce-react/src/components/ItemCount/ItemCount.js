@@ -5,7 +5,7 @@ import FormControl from 'react-bootstrap/FormControl'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 
-const ItemCount = ({ stock , addCountCart}) => {
+const ItemCount = ({ stock , addCountCart, removeCountCart}) => {
     const [count, setCount] = useState(0);
 
     const onAdd = () => {
@@ -16,7 +16,10 @@ const ItemCount = ({ stock , addCountCart}) => {
         }
     }
     const onRemove = () => {
-        count > 0 && setCount(count - 1)
+        if(count > 0) {
+            setCount(count - 1);
+            removeCountCart(count - 1);
+        } 
     }
     
     return (
