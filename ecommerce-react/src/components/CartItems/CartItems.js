@@ -18,7 +18,7 @@ const CartItems = ({ products, totalPrice, deleteProduct }) => {
                 <ListGroup className="list-group-flush">
                     {products.map(product => {
                         return (
-                            <ListGroupItem>
+                            <ListGroupItem key={product.id}>
                                 <Row>
                                     <Col>
                                         <Card>

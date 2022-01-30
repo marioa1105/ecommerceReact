@@ -46,7 +46,9 @@ const Cart = () => {
                                 
                             </tbody>
                         </Table>
-                    </Col>
+                    </Col>                    
+                </Row>
+                <Row>
                     <Col>
                         <Button onClick = {handleShow}>
                             Confirmar Compra

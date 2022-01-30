@@ -4,6 +4,7 @@ import FormControl from 'react-bootstrap/FormControl'
 
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
+import { Button } from 'react-bootstrap'
 
 const ItemCount = ({ stock , addCountCart, removeCountCart}) => {
     const [count, setCount] = useState(0);
@@ -27,7 +28,10 @@ const ItemCount = ({ stock , addCountCart, removeCountCart}) => {
             <Row>
                 <Col>
                     <InputGroup>     
-                        <InputGroup.Text id="btnGroupRemoveon" onClick={onRemove}>-</InputGroup.Text> 
+                        <Button variant="outline-primary" id="btnGroupRemoveon" onClick={onRemove}>
+                            -
+                        </Button>
+                        
                         <FormControl
                             className='text-center'
                             type="label"                    
@@ -35,8 +39,10 @@ const ItemCount = ({ stock , addCountCart, removeCountCart}) => {
                             aria-describedby="btnGroupAddon"
                             value={count}
                             readOnly
-                        />
-                        <InputGroup.Text id="btnGroupAddon" onClick={onAdd}>+</InputGroup.Text>                                                 
+                        />                         
+                        <Button variant="outline-primary" id="btnGroupAddon" onClick={onAdd}>
+                            +
+                        </Button>                                               
                     </InputGroup>
                 </Col>
             </Row>

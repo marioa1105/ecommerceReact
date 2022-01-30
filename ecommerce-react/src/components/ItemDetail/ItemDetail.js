@@ -11,14 +11,18 @@ const ItemDetail = ({ item }) => {
     const {products, addProducts } = useContext(CartContext);
     const [showAlert, setShowAlert] = useState(false);
     const [disabledButton, setdisabledButton] = useState(true);
-    const itemCart = {
-        id: item.id,
-        title: item.title,
-        price: item.price,
-        quantity: 0
-    }
+    const [itemCart, setItemCart] = useState({
+                                                id: item.id,
+                                                title: item.title,
+                                                price: item.price,
+                                                quantity: 0
+                                            });
+    console.log("render itemcar")
     const addCountCart = (count) => {
+        console.log("count",count)
         itemCart.quantity = count;
+        console.log("addCountCart => itemCart",itemCart);
+
         setCountCart || setCountCart(count);        
         setdisabledButton((count == 0))
     }
@@ -27,7 +31,8 @@ const ItemDetail = ({ item }) => {
         setCountCart || setCountCart(count);        
         setdisabledButton((count == 0))
     }
-    const handleAddItemCart = () => {        
+    const handleAddItemCart = () => { 
+        console.log("itemCart",itemCart);
         addProducts(itemCart);
         setShowAlert(true);
         setTimeout(() => {
