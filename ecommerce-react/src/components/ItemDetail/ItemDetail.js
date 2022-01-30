@@ -20,7 +20,6 @@ const ItemDetail = ({ item }) => {
         setCountCart || setCountCart(count);
     }
     const handleAddItemCart = () => {
-        console.log("Producto click =>", products)
         addProducts(itemCart);
     }
     return (

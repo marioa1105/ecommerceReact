@@ -3,7 +3,7 @@ import ItemDetail from '../ItemDetail/ItemDetail'
 import {useParams} from 'react-router-dom'
 import ProductosDAO from '../../API/ProductosDAO'
 import CircularProgress from '@mui/material/CircularProgress';
-
+import {Row, Col} from 'react-bootstrap'
 import './ItemDetailContainer.css'
 
 const ItemDetailContainer = () => {
@@ -19,7 +19,13 @@ const ItemDetailContainer = () => {
     <div className="cardDetailHeader">  
         
         {            
-            Object.keys(product).length > 0 ? <ItemDetail item={product}/>: <CircularProgress/>
+            Object.keys(product).length > 0 
+            ? <ItemDetail item={product}/>
+            : <Row className="justify-content-md-center">
+            <Col md="auto">
+                <CircularProgress /> 
+            </Col> 
+        </Row>
         }
         
     </div>)

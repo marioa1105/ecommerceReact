@@ -7,13 +7,14 @@ import Nav from 'react-bootstrap/Nav'
 import Button from 'react-bootstrap/Button'
 import {Link} from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import './NavBar.css'
 export default () => {
     return (        
             <Navbar bg="dark" variant="dark">
                 <Container>
                     <Link to='/'>
                         <Navbar.Brand>                        
-                            
+                            <img className='logo' src={logo}></img>
                         </Navbar.Brand>
                     </Link>
                     <Nav className="justify-content-end">

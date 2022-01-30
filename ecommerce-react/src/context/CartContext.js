@@ -4,18 +4,18 @@ const CartContext = createContext();
 const CartProvider = ({children}) =>{
     const [products, setProducts] = useState([]);
     const[totalPrice,setTotalPrice] = useState(0);
-    const calculateTotal = () => {
+    const calculateTotal = (items) => {
         let total = 0;
 
-        for (let index = 0; index < products.length; index++) {
-            total = total + (products[index].price * products[index].quantity) ;
+        for (let index = 0; index < items.length; index++) {
+            total = total + (items[index].price * items[index].quantity);  
             
         }
         return total;
     }
     const addProducts = (item) =>{
-        products.find(prod => prod.id == item.id) || setProducts([...products, item]);
-        setTotalPrice(calculateTotal());
+        setTotalPrice(calculateTotal([...products, item]));
+        products.find(prod => prod.id == item.id) || setProducts([...products, item]);               
 
     };
     const deleteProduct = (id) => {
@@ -25,6 +25,7 @@ const CartProvider = ({children}) =>{
                 tempProducts.push(products[index]);
             }            
         }
+        setTotalPrice(calculateTotal(tempProducts));
         setProducts(tempProducts)
     }
     const data = {
@@ -38,7 +39,7 @@ const CartProvider = ({children}) =>{
     return (
         <>
         
-        {console.log("render context")}
+        
         <CartContext.Provider value ={data}>
             {children}
         </CartContext.Provider>
